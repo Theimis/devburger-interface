@@ -43,6 +43,7 @@ export const ContainerItems = styled.div`
   background: url('${(props) => props.imageUrl}');
   background-position: center;
   background-size: cover;
+  border-radius: 20px;
 
   display: flex;
   align-items: center;
@@ -52,17 +53,36 @@ export const ContainerItems = styled.div`
 `;
 
 export const CategoryButton = styled(Link)`
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 30px;
-  border-radius: 30px;
-  font-size: 22.5px;
-  font-weight: 500;
-  margin-top: 50px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 250px;
   text-decoration: none;
 
-  &:hover {
-    background-color: #9758a6;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+  }
+
+  &:hover img {
+    filter: brightness(0.8);
+  }
+
+  &:hover span {
+    color: #9758a6;
   }
 `;
